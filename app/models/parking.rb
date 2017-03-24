@@ -1,5 +1,7 @@
 class Parking < ApplicationRecord
 
+  belongs_to :user, :optional => true
+
   validates_presence_of :parking_type, :start_at
   validates_inclusion_of :parking_type, :in => ["guest", "short-term", "long-term"]
 
@@ -48,5 +50,5 @@ class Parking < ApplicationRecord
       end
     end
   end
-  
+
 end
